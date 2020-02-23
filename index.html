@@ -59,25 +59,16 @@
                 });
             };
 
-            var finished_rendering = function() {
-                console.log("finished rendering plugins");
-                var spinner = document.getElementById("spinner");
-                spinner.removeAttribute("style");
-                spinner.removeChild(spinner.childNodes[0]);
-            }
-            FB.Event.subscribe('xfbml.render', finished_rendering);
-
         </script>
 
         <div id="spinner"
             style="
-                background: #4267b2;
-                border-radius: 5px;
-                color: white;
-                height: 40px;
-                text-align: center;
-                width: 250px;">
-
+            background: #4267b2;
+            border-radius: 5px;
+            color: white;
+            height: 40px;
+            text-align: center;
+            width: 250px;">
             <div
                 class="fb-login-button"
                 data-auto-logout-link="true"
@@ -86,14 +77,7 @@
                 data-button-type="continue_with"
                 data-use-continue-as="false"
             ></div>
-        </divid="spinner"
-    style="
-        background: #4267b2;
-        border-radius: 5px;
-        color: white;
-        height: 40px;
-        text-align: center;
-        width: 250px;">>
+        </div>>
         
 
         <div id="status">
