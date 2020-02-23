@@ -59,11 +59,24 @@
     });
   }
 
+  function reload(){
+    location.reload(); 
+  }
+
 </script>
 
 
 
-<div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+<div 
+    class="fb-login-button" 
+    data-width="" 
+    data-size="large"
+    data-button-type="login_with" 
+    data-auto-logout-link="true" 
+    data-use-continue-as="false"
+    data-onlogin="reload">
+</div>
+
 
 <div id="status">
 </div>
