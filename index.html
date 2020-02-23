@@ -59,6 +59,10 @@
                 });
             };
 
+            function reload(){
+                window.location.reload();
+            }
+
         </script>
 
         <div id="spinner"
@@ -72,12 +76,13 @@
             <div
                 class="fb-login-button"
                 data-auto-logout-link="true"
+                data-onlogin="reload"
                 data-max-rows="1"
                 data-size="large"
                 data-button-type="continue_with"
                 data-use-continue-as="false"
             ></div>
-        </div>>
+        </div>
         
 
         <div id="status">
