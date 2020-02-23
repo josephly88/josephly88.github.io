@@ -40,6 +40,7 @@
     });
 
     FB.XFBML.parse();
+    FB.Event.subscribe('xfbml.render', finished_rendering);
   };
 
   
@@ -67,7 +68,7 @@
       spinner.removeAttribute("style");
       spinner.removeChild(spinner.childNodes[0]);
     }
-  FB.Event.subscribe('xfbml.render', finished_rendering);
+  
 </script>
 
 
