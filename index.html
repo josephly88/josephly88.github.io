@@ -58,7 +58,8 @@
                     'Thanks for logging in, ' + response.name + '!';
                 });
             };
-         
+            
+            /*
             var finished_rendering = function() {
             console.log("finished rendering plugins");
                 var spinner = document.getElementById("spinner");
@@ -66,6 +67,7 @@
                 spinner.removeChild(spinner.childNodes[0]);
             }
             FB.Event.subscribe('xfbml.render', finished_rendering);
+            */
 
         </script>
 
@@ -80,10 +82,14 @@
                 height: 40px;
                 text-align: center;
                 width: 250px;">
-
             Loading
-
-            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+            <div
+                class="fb-login-button"
+                data-max-rows="1"
+                data-size="large"
+                data-button-type="continue_with"
+                data-use-continue-as="true"
+            ></div>
         </div>
 
         <div id="status">
