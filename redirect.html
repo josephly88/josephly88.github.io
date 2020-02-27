@@ -13,22 +13,22 @@
     let redirect_uri = "https://josephly88.github.io/redirect";
     let app_secret = "3a10aaa3ddceb54f1fd25f1cb26a3b11";
     let state_param = "{st=state123abc,ds=123456789}";
-    let code_parameter = "";
+    let url = window.location.href;
+    code_parameter = url.split(/([=&])/)[2];
 
     function getcode(){
-      let url = window.location.href;
-      code_parameter = url.split(/([=&])/)[2];
       document.getElementById("demo").innerHTML = code_parameter;
     }
 
-    function gettoken(){
-      getcode();
-      let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
-      $.get("demo_test.asp", function(data, status){
-        let str = "status = \n\t" + status + "\ndata = \n\t" + data;
-        document.getElementByID("demo").innerHTML = str;
-      });
-    }
+    let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
+
+    $("#token").click(function(){
+        $.get("demo_test.asp", function(data, status){
+          let str = "status = \n\t" + status + "\ndata = \n\t" + data;
+          document.getElementByID("demo").innerHTML = str;
+         });
+
+    });
 
   </script>
 
@@ -36,7 +36,7 @@
   <h1>Redirection</h1>
 
   <button onclick="getcode()">Get Code</button>
-  <button onclick="gettoken()">Get Access Token</button>
+  <button id="token">Get Access Token</button>
 
   <p id="demo"></p>
 
