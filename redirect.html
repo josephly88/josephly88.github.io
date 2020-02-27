@@ -24,7 +24,7 @@
     function gettoken(){
       getcode();
       let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
-      $.get(link, function(data, status){
+      $.get("demo_test.asp", function(data, status){
         let str = "status = \n\t" + status + "\ndata = \n\t" + data;
         document.getElementByID("demo").innerHTML = str;
       });
