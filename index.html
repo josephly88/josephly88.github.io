@@ -9,7 +9,14 @@
   <script>
 
     function login(){
-      window.location.href = "https://www.facebook.com/v6.0/dialog/oauth?client_id={182150883083865}&redirect_uri={"https://www.facebook.com/connect/login_success.html"}&state={"{st=state123abc,ds=123456789}"}";
+
+      let app_id = "182150883083865";
+      let redirect_uri = "https://josephly88.github.io/success";
+      let state_param = "{st=state123abc,ds=123456789}";
+      
+      let link = "https://www.facebook.com/v6.0/dialog/oauth?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&state=" + state_param;
+      window.location.href = link;
+
     }
     
   </script>
