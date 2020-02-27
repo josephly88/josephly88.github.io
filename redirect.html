@@ -3,7 +3,6 @@
 <head>
   <title>Facebook Login Example</title>
   <meta charset="UTF-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
   
@@ -20,7 +19,11 @@
       document.getElementById("demo").innerHTML = code_parameter;
     }
 
-    let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
+    
+    function gettoken(){
+      let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
+      document.getElementById("demo").innerHTML = link;
+    }
 /*
     $(document).ready(function(){
       $("#token").click(function(){
@@ -38,7 +41,7 @@
   <h1>Redirection</h1>
 
   <button onclick="getcode()">Get Code</button>
-  <button id="token">Get Access Token</button>
+  <button onclick="gettoken()">Get Access Token</button>
 
   <p id="demo"></p>
 
