@@ -24,15 +24,11 @@
       let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
       document.getElementById("demo").innerHTML = link;
     }
-/*
-    $(document).ready(function(){
-      $("#token").click(function(){
-        $.get("demo_test.asp", function(data, status){
-          alert("Data: " + data + "\nStatus: " + status);
-        });
-      });
-    });
-*/
+
+    function getapptoken(){
+      let link = "https://graph.facebook.com/oauth/access_token?client_id=" + app_id + "&client_secret=" + app_secret + "&grant_type=client_credentials";
+      document.getElementById("demo").innerHTML = link;
+    }
     
 
   </script>
@@ -41,7 +37,8 @@
   <h1>Redirection</h1>
 
   <button onclick="getcode()">Get Code</button>
-  <button onclick="gettoken()">Get Access Token</button>
+  <button onclick="getusertoken()">Get Access Token</button>
+  <button onclick="getapptoken"()>Get App Token</button>
 
   <p id="demo"></p>
 
