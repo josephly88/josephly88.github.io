@@ -20,7 +20,7 @@
     }
 
     
-    function gettoken(){
+    function getusertoken(){
       let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
       document.getElementById("demo").innerHTML = link;
     }
@@ -38,7 +38,7 @@
 
   <button onclick="getcode()">Get Code</button>
   <button onclick="getusertoken()">Get Access Token</button>
-  <button onclick="getapptoken"()>Get App Token</button>
+  <button onclick="getapptoken()">Get App Token</button>
 
   <p id="demo"></p>
 
