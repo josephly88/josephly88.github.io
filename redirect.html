@@ -26,10 +26,16 @@
     }
 
     function getapptoken(){
-      let link = "https://graph.facebook.com/oauth/access_token?client_id=" + app_id + "&client_secret=" + app_secret + "&grant_type=client_credentials";
+      let link = "https://graph.facebook.com/oauth/access_token?" + "client_id=" + app_id + "&client_secret=" + app_secret + "&grant_type=client_credentials";
       document.getElementById("demo").innerHTML = link;
     }
     
+    function tokencheck(){
+      let inspect = document.getElementById("inspect").value;
+      let app_token = document.getElementById("app_token").value;
+      let link = "graph.facebook.com/debug_token?" + "input_token=" + insepct + "&access_token=" + app_token;
+      document.getElementById("demo").innerHTML = link;
+    }
 
   </script>
 
@@ -39,6 +45,10 @@
   <button onclick="getcode()">Get Code</button>
   <button onclick="getusertoken()">Get Access Token</button>
   <button onclick="getapptoken()">Get App Token</button>
+  <br><br>
+  <div>token-to-inspect: <input id="inspect"></div>
+  <div>app-token: <input id="app_token"></div>
+  <button onclick="tokencheck()">Token Inspection</button>
 
   <p id="demo"></p>
 
