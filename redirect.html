@@ -17,10 +17,11 @@
 
     function getcode(){
       let url = window.location.href;
-      code_parameter = url.split(/([=&])/)[1];
+      code_parameter = url.split(/([=&])/)[2];
       document.getElementById("demo").innerHTML = code_parameter;
     }
 
+/*
     function gettoken(){
       let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
       $.get(link, function(data, status){
@@ -28,6 +29,7 @@
         console.log("data = " + data);
       });
     }
+    */
 
   </script>
 
