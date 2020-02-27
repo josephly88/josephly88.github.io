@@ -24,8 +24,7 @@
 
     $("#token").click(function(){
         $.get("demo_test.asp", function(data, status){
-          let str = "status = \n\t" + status + "\ndata = \n\t" + data;
-          document.getElementByID("demo").innerHTML = str;
+          alert("Data: " + data + "\nStatus: " + status);
          });
 
     });
