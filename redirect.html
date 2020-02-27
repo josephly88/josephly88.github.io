@@ -22,12 +22,14 @@
 
     let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
 
-    $("#token").click(function(){
+    $(document).ready(function(){
+      $("#token").click(function(){
         $.get("demo_test.asp", function(data, status){
           alert("Data: " + data + "\nStatus: " + status);
-         });
-
+        });
+      });
     });
+    
 
   </script>
 
