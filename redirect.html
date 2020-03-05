@@ -18,7 +18,6 @@
     function getcode(){
       document.getElementById("demo").innerHTML = code_parameter;
     }
-
     
     function getusertoken(){
       let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;

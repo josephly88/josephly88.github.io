@@ -13,13 +13,13 @@
       let app_id = "1460305424130724";
       let redirect_uri = "https://josephly88.github.io/redirect";
       let state_param = "{st=state123abc,ds=123456789}";
-      let scope = "public_profile,pages_messaging";
+      let scope = "pages_messaging";
       
       let link = "https://www.facebook.com/v6.0/dialog/oauth?"
        + "client_id=" + app_id
         + "&redirect_uri=" + redirect_uri 
         + "&state=" + state_param
-        + "&scope=" + scope;
+        + "&data_scope=" + scope;
       window.location.href = link;
 
     }
