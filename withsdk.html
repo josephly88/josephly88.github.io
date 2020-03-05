@@ -62,20 +62,14 @@
     });
   }
 
+  FB.login(function(response){
+  // handle the response 
+  }, {scope: 'public_profile, pages_messaging'});
+
 </script>
 
 
-<div 
-  class="fb-login-button"
-  data-width="" 
-  data-size="large" 
-  data-button-type="continue_with" 
-  data-auto-logout-link="false" 
-  data-use-continue-as="false"
-  data-scope="pages_messaging"></div>
-
-<div id="status">
-</div>
+<button onclick="FB.login()">Facebook Log-in</button>
 
 </body>
 </html>
