@@ -14,25 +14,15 @@
     let state_param = "{st=state123abc,ds=123456789}";
     let url = window.location.href;
     code_parameter = url.split(/([=&])/)[2];
-
-    function getcode(){
-      document.getElementById("demo").innerHTML = code_parameter;
-    }
     
     function getusertoken(){
       let link = "https://graph.facebook.com/v6.0/oauth/access_token?" + "client_id=" + app_id + "&redirect_uri=" + redirect_uri + "&client_secret=" + app_secret + "&code=" + code_parameter;
       document.getElementById("demo").innerHTML = link;
     }
-
-    function getapptoken(){
-      let link = "https://graph.facebook.com/oauth/access_token?" + "client_id=" + app_id + "&client_secret=" + app_secret + "&grant_type=client_credentials";
-      document.getElementById("demo").innerHTML = link;
-    }
     
     function tokencheck(){
-      let inspect = document.getElementById("inspect").value;
-      let app_token = document.getElementById("app_token").value;
-      let link = "graph.facebook.com/debug_token?" + "input_token=" + inspect + "&access_token=" + app_token;
+      let token = document.getElementById("exchange").value;
+      let link = " https://graph.facebook.com/v6.0/oauth/access_token?grant_type=fb_exchange_token&" + "client_id=" + app_id + "&client_secret=" + app-secret + "&fb_exchange_token=" + token;
       document.getElementById("demo").innerHTML = link;
     }
 
@@ -41,12 +31,9 @@
 
   <h1>Redirection</h1>
 
-  <button onclick="getcode()">Get Code</button>
   <button onclick="getusertoken()">Get Access Token</button>
-  <button onclick="getapptoken()">Get App Token</button>
   <br><br>
-  <div>token-to-inspect: <input id="inspect"></div>
-  <div>app-token: <input id="app_token"></div>
+  <div>token-to-exchange: <input id="exchange"></div>
   <button onclick="tokencheck()">Token Inspection</button>
 
   <p id="demo"></p>
