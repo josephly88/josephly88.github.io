@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Facebook Login Example</title>
+  <title>Paypal Subscription Test</title>
   <meta charset="UTF-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 <body>
-  <script>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=3G7Z3GS4DQ3M8&vault=true">
 
-    function login(){
+    paypal.Buttons({
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          'plan_id': 'P-1Y2683316E624641KLZ27KMQ'
+        });
+      },
 
-      let app_id = "1460305424130724";
-      let redirect_uri = "https://josephly88.github.io/redirect";
-      let state_param = "{st=state123abc,ds=123456789}";
-      //let scope = "email, pages_show_list, pages_messaging";
-      let scope = "email,pages_show_list,pages_messaging";
-      
-      let link = "https://www.facebook.com/v6.0/dialog/oauth?"
-       + "client_id=" + app_id
-        + "&redirect_uri=" + redirect_uri 
-        + "&state=" + state_param
-        + "&scope=" + scope;
-      window.location.href = link;
 
-    }
+      onApprove: function(data, actions) {
+        alert('You have successfully created subscription ' + data.subscriptionID);
+      }
+    }).render('#paypal-button-container');
 
   </script>
 
+  <div id="paypal-button-container"></div>
 
-  <h1>Hello, Visitor</h1>
+  <script>
+    paypal.Buttons().render('#paypal-button-container');
+  </script>
 
-  <button onclick="login()">Facebook Log-in</button>
 
 </body>
 </html>
