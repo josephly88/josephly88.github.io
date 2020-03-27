@@ -10,17 +10,24 @@
   <script src="https://www.paypal.com/sdk/js?client-id=AQ5Z6mIlmJTX-9xsugfvO2TVDhjetEUeAIzVBTb2aVegxQctEIOT3-sY0dVk8ZNQIQ0BAQPRl0V-ljT_&vault=true">
 
     paypal.Buttons({
-      createSubscription: function(data, actions) {
+
+      reateSubscription: function(data, actions) {
         return actions.subscription.create({
-          'plan_id': 'P-1Y2683316E624641KLZ27KMQ'
-        });
+          'plan_id': 'P-0GN25591S3934623CLZ64SFY'
+       });
       },
 
-
       onApprove: function(data, actions) {
-        console.log('You have successfully created subscription ' + data.subscriptionID);
-      }
+        alert('You have successfully created subscription ' + data.subscriptionID);
+      },
+
+      onError: function (err) {
+        alert('Subscription Fail');
+      },
+
     }).render('#paypal-button-container');
+
+    
 
   </script>
 
